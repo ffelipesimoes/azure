@@ -1,0 +1,98 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "networkInterfaceName": {
+            "value": "NIC_VMNYCDGWEB02"
+        },
+        "networkSecurityGroupName": {
+            "value": "VMNYCDGWEB02-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "L3"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/f291bcad-8bec-45c2-87c1-11fe9aac13f3/resourceGroups/RG_NYC_INFRA/providers/Microsoft.Network/virtualNetworks/VNET_NYC_PRODUCTION"
+        },
+        "publicIpAddressName": {
+            "value": "VMNYCDGWEB02-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "VMNYCDGWEB02"
+        },
+        "virtualMachineComputerName": {
+            "value": "VMNYCDGWEB02"
+        },
+        "virtualMachineRG": {
+            "value": "RG_NYC_FRONTEND"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "adminUsername": {
+            "value": "Student"
+        },
+        "adminPassword": {
+            "value": "Pa55w.rd1234"
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "availabilitySetName": {
+            "value": "Av_Set_NYC_Front"
+        },
+        "availabilitySetPlatformFaultDomainCount": {
+            "value": 2
+        },
+        "availabilitySetPlatformUpdateDomainCount": {
+            "value": 5
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "UTC"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
+        },
+        "autoShutdownNotificationEmail": {
+            "value": "ffelipesimoes@outlook.com"
+        }
+    }
+}
